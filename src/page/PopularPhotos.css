@@ -1,0 +1,52 @@
+.recent-photos {
+  padding: 10px;
+}
+
+.recent-photos h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.photos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.photos-grid img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.photos-grid img:hover {
+  transform: scale(1.05);
+  border-color: #aaa;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination button.active,
+.pagination button:hover {
+  background-color: #0056b3;
+}

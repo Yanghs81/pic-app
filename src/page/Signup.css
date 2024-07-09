@@ -1,0 +1,35 @@
+.signup-form {
+  max-width: 400px;
+  margin: 5em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+label {
+  display: block;
+  margin-bottom: .5em;
+}
+
+input {
+  width: 100%;
+  padding: .5em;
+  box-sizing: border-box;
+}
+
+.button-signup {
+  padding: .5em 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: .3em;
+  cursor: pointer;
+}
+
+.button-signup:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,82 @@
+/* Navbar.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #eeedec;
+}
+
+.link-logout,
+.link-mypage,
+.link-signup,
+.link-login {
+  text-decoration: none;
+  color: #646363;
+  margin: 0 10px;
+}
+
+.hello {
+  color: #646363;
+  font-size: 14px;
+}
+
+.menu-icon,
+.bars-icon {
+  display: none;
+}
+
+.home svg,
+.menu-icon svg {
+  font-size: 24px; /* 필요에 따라 크기 조정 */
+}
+
+@media (max-width: 470px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .header .home {
+    margin-right: auto;
+  }
+
+  .menu-icon,
+  .bars-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-icon {
+    margin-left: auto;
+  }
+
+  .menu-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+  }
+
+  .menu-content.show {
+    display: block;
+  }
+
+  .menu-content a,
+  .menu-content button {
+    display: block;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .menu-content button {
+    color: #000;
+  }
+}
