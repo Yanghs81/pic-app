@@ -14,7 +14,7 @@ const PhotoView = () => {
   const [msg, setMsg] = useState("");
   useEffect(() => {
     fetchPhoto();
-  }, []);
+  });
 
   const fetchPhoto = async () => {
     try {
