@@ -13,9 +13,12 @@ const Navbar = () => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await axios.get(`${process.env.SV_URL}/checkSession`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `${process.env.REACT_APP_SV_URL}/checkSession`,
+          {
+            withCredentials: true,
+          }
+        );
         console.log(
           "response-----",
           response.data.user.email,
@@ -31,7 +34,7 @@ const Navbar = () => {
   }, [setUser]);
 
   const handleLogout = async () => {
-    await axios.get(`${process.env.SV_URL}/logout`, {
+    await axios.get(`${process.env.REACT_APP_SV_URL}/logout`, {
       withCredentials: true,
     });
     setUser(null);
@@ -52,7 +55,7 @@ const Navbar = () => {
       <nav className={`menu-content ${menuOpen ? "show" : ""}`}>
         {user ? (
           <>
-            <span className="hello">^^ 반갑습니다~ {nickName}님! </span>
+            <span className="hello">반갑습니다 {nickName}</span>
             <Link className="link-logout" to="/" onClick={handleLogout}>
               Logout
             </Link>

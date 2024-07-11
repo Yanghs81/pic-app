@@ -14,13 +14,17 @@ const PopularPhotos = () => {
 
   const fetchPhotos = async (page) => {
     try {
-      const response = await axios.get(`${process.env.SV_URL}/popularPhotos`, {
-        params: { page, limit: 15 },
-      });
+      const response = await axios.get(
+        `${process.env.REACT_APP_SV_URL}/popularPhotos`,
+        {
+          params: { page, limit: 15 },
+        }
+      );
+
       setPhotos(response.data.photos);
       setTotalPages(Math.ceil(response.data.total / 15));
     } catch (error) {
-      console.error("사진을 불러오는 중 에러 발생:", error);
+      console.error("사진을 불러오는 중 에러 발생:");
     }
   };
 
@@ -77,7 +81,7 @@ const PopularPhotos = () => {
         {photos.map((photo) => (
           <Link to={`/photo/${photo.file_name}`} key={photo.file_name}>
             <img
-              src={`${process.env.SV_URL}/uploads/${photo.file_name}`}
+              src={`${process.env.REACT_APP_SV_URL}/uploads/${photo.file_name}`}
               alt={photo.description}
             />
           </Link>

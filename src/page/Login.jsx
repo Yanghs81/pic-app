@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios({
-        url: `${process.env.SV_URL}/login`,
+        url: `${process.env.REACT_APP_SV_URL}/login`,
         method: "POST",
         withCredentials: true,
         data: {
@@ -26,7 +26,6 @@ const Login = () => {
       });
 
       setUser(response.data.user.email);
-      Navbar();
       navigate("/popularPhotos");
     } catch (error) {
       setError("Invalid email or password");
@@ -49,7 +48,7 @@ const Login = () => {
         />
       </div>
       <div className="group-Password">
-        <label className="label-Password">Password: 12345678</label>
+        <label className="label-Password">Password: 1234</label>
         <input
           className="input-Password"
           type="password"

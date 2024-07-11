@@ -33,7 +33,7 @@ const PhotoUpload = () => {
     formData.append("fileNames", fileNames.join(",")); // 파일명을 FormData에 추가
     try {
       const response = await axios.post(
-        `${process.env.SV_URL}/uploadPhotos`,
+        `${process.env.REACT_APP_SV_URL}/uploadPhotos`,
         formData,
         {
           headers: {
