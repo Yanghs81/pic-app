@@ -31,6 +31,10 @@ const PhotoUpload = () => {
     });
 
     formData.append("fileNames", fileNames.join(",")); // 파일명을 FormData에 추가
+    formData.append("user", user); // user 정보를 FormData에 추가
+    // formData.append("user", JSON.stringify(user)); // user 정보를 FormData에 추가
+    console.log("formData==", formData);
+
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_SV_URL}/uploadPhotos`,
@@ -42,6 +46,7 @@ const PhotoUpload = () => {
         }
       );
       console.log("Upload successful", response);
+      navigate("/recentPhotos");
     } catch (error) {
       console.error("Upload error", error);
     }

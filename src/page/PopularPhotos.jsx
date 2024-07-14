@@ -17,12 +17,12 @@ const PopularPhotos = () => {
       const response = await axios.get(
         `${process.env.REACT_APP_SV_URL}/popularPhotos`,
         {
-          params: { page, limit: 15 },
+          params: { page, limit: 12 },
         }
       );
 
       setPhotos(response.data.photos);
-      setTotalPages(Math.ceil(response.data.total / 15));
+      setTotalPages(Math.ceil(response.data.total / 12));
     } catch (error) {
       console.error("사진을 불러오는 중 에러 발생:");
     }
@@ -34,7 +34,7 @@ const PopularPhotos = () => {
 
   const renderPagination = () => {
     const pageNumbers = [];
-    const maxPagesToShow = 15;
+    const maxPagesToShow = 12;
     const halfMaxPagesToShow = Math.floor(maxPagesToShow / 2);
 
     let startPage = Math.max(currentPage - halfMaxPagesToShow, 1);

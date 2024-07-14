@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../components/UserContext";
 import "./Login.css";
-import { Navbar } from "react-bootstrap";
 
 const Login = () => {
   const [email, setEmail] = useState("");

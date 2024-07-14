@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -18,14 +20,16 @@ const Signup = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log("here?", process.env.REACT_APP_SV_URL);
     e.preventDefault();
-    console.log("url---", process.env.REACT_APP_SV_URL);
     axios
       .post(`${process.env.REACT_APP_SV_URL}/signup`, formData)
       .then((response) => {
         console.log("Signup successful", response.data);
+        navigate("/login");
       })
       .catch((error) => {
+        console.log("Signup failed");
         console.error("There was an error!", error);
       });
   };

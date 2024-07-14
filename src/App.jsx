@@ -5,6 +5,7 @@ import PhotoUpload from "./page/PhotoUpload";
 import RecentPhotos from "./page/RecentPhotos";
 import PhotoView from "./page/PhotoView";
 import Login from "./page/Login";
+import MyPage from "./page/MyPage";
 import Signup from "./page/Signup";
 import Home from "./page/Home";
 import { UserProvider } from "./components/UserContext";
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/photoUpload" element={<PhotoUpload />} />
           <Route path="/photo/:id" element={<PhotoView />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/mypage" element={<MyPage />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>

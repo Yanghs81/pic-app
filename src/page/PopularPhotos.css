@@ -1,5 +1,5 @@
 .recent-photos {
-  padding: 10px;
+  padding: 3px;
 }
 
 .recent-photos h2 {
@@ -11,29 +11,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .photos-grid img {
   width: 100px;
   height: 100px;
-  margin: 10px;
+  margin: 3px;
   object-fit: cover;
   cursor: pointer;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 3px;
   transition: transform 0.2s;
 }
 
 .photos-grid img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   border-color: #aaa;
 }
 
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .pagination button {
