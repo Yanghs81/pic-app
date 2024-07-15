@@ -17,9 +17,7 @@ const Home = () => {
       });
       const { data } = response;
       setPhoto(data);
-    } catch (error) {
-      console.error("error==", error);
-    }
+    } catch (error) {}
   };
 
   return (

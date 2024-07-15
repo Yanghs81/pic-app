@@ -11,7 +11,7 @@
 .link-mypage,
 .link-signup,
 .link-login {
-  text-decoration: none;
+  text-decoration: none !important;;
   color: #646363;
   margin: 0 10px;
 }
@@ -19,6 +19,7 @@
 .hello {
   color: #646363;
   font-size: 14px;
+  margin-left: 40px;
 }
 
 .menu-icon,

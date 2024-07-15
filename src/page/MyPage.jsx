@@ -84,7 +84,7 @@ const MyPage = () => {
       if (longPress) {
         setDeleteMode(true);
       }
-    }, 1000); // 1초 이상 길게 누를 때 삭제 모드 활성화
+    }, 800); // 1초 이상 길게 누를 때 삭제 모드 활성화
   };
 
   const handleMouseUp = () => {

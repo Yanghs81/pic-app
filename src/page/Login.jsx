@@ -36,7 +36,7 @@ const Login = () => {
       <h2>로그 인</h2>
       {error && <p>{error}</p>}
       <div className="group-email">
-        <label className="label-email">ya@gmail.com</label>
+        <label className="label-email">email:</label>
         <input
           className="input-email"
           type="email"
@@ -47,7 +47,7 @@ const Login = () => {
         />
       </div>
       <div className="group-Password">
-        <label className="label-Password">Password: 1234</label>
+        <label className="label-Password">Password:</label>
         <input
           className="input-Password"
           type="password"

@@ -19,11 +19,6 @@ const Navbar = () => {
             withCredentials: true,
           }
         );
-        console.log(
-          "response-----",
-          response.data.user.email,
-          response.data.user.nickName
-        );
         setUser(response.data.user.email);
         setNickName(response.data.user.nickName);
       } catch (error) {
@@ -31,44 +26,49 @@ const Navbar = () => {
       }
     };
     checkSession();
-  }, [setUser]);
+  });
 
   const handleLogout = async () => {
     await axios.get(`${process.env.REACT_APP_SV_URL}/logout`, {
       withCredentials: true,
     });
     setUser(null);
+    setMenuOpen(false);
   };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header">
-      <Link className="home" to={"/"}>
+      <Link className="home" to={"/"} onClick={closeMenu}>
         <FaHome />
       </Link>
+      {user && <span className="hello">{`반갑습니다 ${nickName}님`}</span>}
       <div className="menu-icon" onClick={toggleMenu}>
         <FaBars />
       </div>
-
       <nav className={`menu-content ${menuOpen ? "show" : ""}`}>
         {user ? (
           <>
-            <span className="hello">반갑습니다 {nickName}</span>
             <Link className="link-logout" to="/" onClick={handleLogout}>
               Logout
             </Link>
-            <Link className="link-mypage" to="/mypage">
+            <Link className="link-mypage" to="/mypage" onClick={closeMenu}>
               Mypage
             </Link>
           </>
         ) : (
           <>
-            <Link className="link-login" to={"/login"}>
+            <Link className="link-login" to={"/login"} onClick={closeMenu}>
               Login
             </Link>
-            <Link className="link-signup" to={"/signup"}>
+            <Link className="link-signup" to={"/signup"} onClick={closeMenu}>
               Signup
             </Link>
           </>
