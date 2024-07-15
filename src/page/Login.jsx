@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../components/UserContext";
 import "./Login.css";
@@ -25,6 +26,7 @@ const Login = () => {
       });
 
       setUser(response.data.user.email);
+      Navbar();
       navigate("/popularPhotos");
     } catch (error) {
       setError("Invalid email or password");
