@@ -8,7 +8,6 @@ import { UserContext } from "./UserContext";
 const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [nickName, setNickName] = useState("");
 
   useEffect(() => {
     const checkSession = async () => {
@@ -20,7 +19,6 @@ const Navbar = () => {
           }
         );
         setUser(response.data.user.email);
-        setNickName(response.data.user.nickName);
       } catch (error) {
         setUser(null);
       }
@@ -49,7 +47,7 @@ const Navbar = () => {
       <Link className="home" to={"/"} onClick={closeMenu}>
         <FaHome />
       </Link>
-      {user && <span className="hello">{`반갑습니다 ${nickName}님`}</span>}
+      {user && <span className="hello">{`반갑습니다`}</span>}
       <div className="menu-icon" onClick={toggleMenu}>
         <FaBars />
       </div>
